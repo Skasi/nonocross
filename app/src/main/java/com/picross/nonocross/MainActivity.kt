@@ -46,14 +46,14 @@ class MainActivity : AppCompatActivity() {
         rowsPicker.minValue = 2
         rowsPicker.value = 10
         rowsPicker.wrapSelectorWheel = false
-        rowsPicker.setOnValueChangedListener { _, _, _ -> }
+        rowsPicker.setOnValueChangedListener { _, _, _ ->
+            colsPicker.maxValue = rowsPicker.value
+        }
         colsPicker.maxValue = 50
         colsPicker.minValue = 2
         colsPicker.value = 10
         colsPicker.wrapSelectorWheel = false
-        colsPicker.setOnValueChangedListener { _, _, _ ->
-            rowsPicker.maxValue = colsPicker.value
-        }
+        colsPicker.setOnValueChangedListener { _, _, _ -> }
         diffPicker.maxValue = 10
         diffPicker.minValue = 1
         diffPicker.value = 5
